@@ -1,0 +1,111 @@
+*{
+  margin: 0;
+  padding: 0; 
+  
+}
+.body{
+  background-color: #39485c;
+  justify-content: justify;
+
+}
+
+
+/* .container{ */
+ 
+ /* margin: auto; */
+  /* display: flex;
+  justify-content:center;
+  align-items:center;
+  gap: 20px;
+  flex-wrap:wrap;
+  flex-direction: row;
+  min-height: 100vh; */
+/* } */
+
+.item{
+  text-align: center;
+  width: 180px;
+  background-color:#39485c;
+  transition: transform 1.6s;
+  box-shadow: 2px  2px 2px 4px rgba(26, 24, 24,0.6);
+  
+}
+.item:hover{
+  
+ /* background-color: rgb(2, 67, 44); */
+ /* transform:translateY(-10px); */
+ transform:scale(1.1);
+ 
+}
+.label{
+  background-color: red ;
+  width:100%;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 1.2rem;
+
+}
+.data{
+  padding: 10px;
+}
+.button{
+  width: 60%;
+  color: white;
+  border: none;
+}
+.basic{
+  background-color: #7aac59;
+  border-radius: 8px;
+  margin-bottom: 5px;
+
+}
+.enterprise{
+  background-color: #5d231b;
+  border-radius: 8px;
+  margin-bottom: 5px;
+
+
+}
+.standard{
+  background-color: #462758;
+  border-radius: 8px;
+  margin-bottom: 5px;
+
+
+}
+.basicLabel{
+  background-color: #da5953;
+  
+}
+.enterpriseLabel{
+  background-color: #e39644;
+}
+.standardLabel{
+  background-color:#58b39b ;
+}
+
+/* #row:active{
+  flex-direction: row;
+}
+#column:active{
+  .column{
+    flex-direction: 'column';
+  }
+} */
+
+.Labell
+{
+  color:#7b82d9;
+  font-size: larger;
+  padding: 10px;
+
+}
+.inputs{
+  text-align: center;
+  /* justify-items: space-between; */
+}
+
+.mainLabel{
+  color:#93A5BC;
+  font-size: 30px;
+}
