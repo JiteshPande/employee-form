@@ -1,0 +1,187 @@
+Command from udemy-git-essential course
+
+#configuration
+1.git config --global        				***shows all the files
+2.git config --global user.name "your name"  		***making git know your name
+3.git config --global user.email "your email"   	***configuring email to git,should be same as github
+4.cat ~/.gitconfig					***shows the name and email you just configured
+
+
+#setting up a SSH key					***we need ssh key because we dont want type password everytime we clone a repo with HTTPS
+1.ssh-keygen -o                                         ***makes a ssh key for your system and saves it in "~/.ssh/id_rsa"
+2.cat ~/.ssh/id_rsa                                     ***going in that folder to grab the key and put that in github
+
+#clonning a repo
+1.git clone SSH_URL					***it will create a new folder and  and clone all the files in that folder from github
+2.cd CLONED_FOLDER					***you can go inside that folder
+3.ls -la						***viewing all files inside the folder
+4.cat FILE_NAME						***you can view a file
+5.pwd 							***you can view the directory you are in
+
+#creating a new repo					***first click on the button "create new repo" in github and it will give few command to follow ,but before 
+							typing those command make a folder in your system.
+1.mkdir NEW_FOLDER					***creates a new folder
+2.cd NEW_FOLDER						***we go in that newfolder
+3.echo "# WRITING A README FOLDER" >> README.md		***we are making readme file manually and writing inside it. Currently the file is unstaged
+4.ls -la						***you can view the file in your directory
+5.git init						***initialising the new repo
+6.git status						***you can view the new unstaged file in red color and staged file in green color
+7.git add README.md					***making unstaged file staged
+8.git status 						***see if the file is staged
+9.git commit -m "FIrst commit"				***committing all staged file ,after commit "git status" shows no file
+10.git log						***we can see the commit update with a hash number and HEAD->branch:it shows which branch we aew currently in
+11.git remote add origin git@github.com:SAGAR761997	***here we are adding our github account , here origin means github, if you have gitlab or bitbucket it will be 
+							different.
+12.git remote -v					*** you can see your accounts where you are pushing the files and from where you are fetvhing the file
+13.git push -u origin master				*** we are pushing all staged file in github(origin) and in master branch
+
+NOW IF YOUREFRESH THE PAGE YOU CAN SEE A NEW REPO WITH README.MD FILE
+
+#creating a new file
+
+$$$theory: there are 4 stages of creaing a file, when we create a file that file is unstaged, to push a that file, we have to make it staged and then we have to commit
+it and then we have to push it.4 stages of file->
+1.unstaged: 	every new file is unstaged after we create it.
+2.staged: 	staged means we are putting it ina box and making it ready to ship. we do it by this command "git add FILE_NAME"
+3.commit: 	we sign it so that it is authrised and ready to ship . we do this "git commit -m "COMMIT_MESSEGE""
+4.push: 	now that we put the file in a box and autherized we can push it to repo by this command " git push origin master"  . here origin means github and maste
+		r is the branch name.
+
+#status
+1.git status						***it shows status of the file.If file is unstaged then red color. if file is staged the green color .after 
+							commit it shows no file.
+
++++circumstances:lets say you unfortunetly deleted  a staged file, now if you commit or push this , it will also delete that from github.so what to do?first, we have 
+to make the deleted file staged to unstaged so even we commit and push, it does not delete that from original github
+
+#unstaging a file:
+1. git reset HEAD FILE_NAME				***it makes a staged file unstaged
+
++++circumstances:secend, we have to undo the delete . we already have that file in our last commit. we can get that file from there
+
+#undeleting a file:
+1.git checkout -- FILE_NAME				***gets the deleted file back from last commit
+
+#origin
+
+$$$theory:origin means github or the service you are using like bitbucket or gitlab
+
+1.git remote -v 					***you can see origin which is fetch and push
+
+#branching:
+
+$$$theory:when we are experimenting with our code , its better not to do in master branch because then we can put bugs in main code, so we create a copy of the code 
+which is in mmaster branch and thus we create a new branch. so master branch is the main branch and all other branches are tiny branch which is a copy of master branch
+and after making changes to different branch we can merge it to master branch
+
+1.git checkout -b NEW_BRANCH_NAME			*** "-b" to create anew branch
+2.git branch						*** you can see how many branches are there and which branch you are in
+2.git checkout master					*** to go to masterbranch
+3.git checkout OTHER_BRANCH				*** to go to other branch
+
+#merging branch to master branch:
+
+$$$theory:whenever we want to merge a branch with target branch always make sure that you are updated with the target branch code. here target branch is master branch
+so we have to be updated in master branch and then we can merge new branch to master branch.to merge you have to be in target branch then merge the other branch to it.
+here target is master branch, and then merge new branch to master branch.we merged two branches locally , so we have to push that.
+
+1.git branch						***first see which btranch you are in
+2.git checkout master					***go to master brach
+3.git branch						***check if you are in master branch
+4.git pull origin master				***you are pulling code of master branch in your system
+5.git branch						***check if you are in target branch
+6.git merge NEW_BRANCH					*** merging the new-branch with target-branch
+7.git push origin master				***push merged target branch to github
+
+#watching git history
+
+1.git log						***if we want to check history
+
+$$$theory:git log shows which branch we are in and every commit with its hashcode and author.we should check git log to check if we are updated with latest commit or 
+not.now to be updated with latest commit you can run "git pull origin master"
+
+#updating the branch:
+
+$$$theory: lets say someone updated the code in the repo and you dont have the updated code, then first we have to see history with "git log" and then check we are
+updated with latest commit or not also there is one advance git log command that is "git log --online --graph --decorate --all".if we are not updated with latest
+commit, we can just do this following command
+
+1.git fetch origin master 				***you can just fetch the update but it will not add that to local file , you can just only see that with git 
+							log
+2.git pull origin master				***you can update your local code with updated github code.
+
+
+
+#force pushing
+  git reset --hard <code>
+to delete the particular file
+
+git push origin master --force
+
+delete with the history we cannot find that something is happened in the history also
+
+
+#how to rebase
+touch rebase-file.txt
+git rebase  reabase-branch
+
+
+#resolving merge and rebase conficts
+
+create ne file
+merge-conflict.txt
+vim  merge-conflict.txt
+copy andpaste edit it.
+git add.
+git commit -m"
+git pull origin maser
+git status
+git diff merge-conflict.txt
+vim merge-conflict.txt
+git status 
+git add merge-conflict.txt
+git commit//no-message
+
+
+git log --onelline
+git push orihgin master
+
+rebase
+vim rebase-conflict.txt
+git commit -m "rebase conflict'
+
+git add reabase-conflict.txt
+
+git commit -m"done:
+
+#stash code{
+git branch stash-example;
+git branch;
+vimreadme
+git stash;
+git stash.txt
+git stash list
+
+git stash drop
+
+
+
+
+
+
+
+
+//josn server
+
+npx --json server --watch db.json --port 5000
+npx --json server -watch db.json port 5000
+npx --json server --watch db.json --port 5000
+npx --json server --watch db.json --port 5000
+npx --json server --watch db.json --port 5000
+npx --jsn server --watch db.json --port 5000
+
+
+
+
+
+
