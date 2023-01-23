@@ -98,7 +98,7 @@ project
 ● In order to add a new employee first click the ADD
 EMPLOYEE button.
 
-![Screenshot (28)](https://user-images.githubusercontent.com/113659313/199222385-4bddce0e-15a8-4d1c-b0da-eeaadd50a240.png)
+![Screenshot (47)](https://user-images.githubusercontent.com/113659313/213979945-ae21181a-e95a-429b-b253-66fe3ed88fd6.png)
 
 ● The user is presented with a dialog form where the
 details can be filled in and submitted.
