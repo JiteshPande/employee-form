@@ -1,17 +1,18 @@
-import React, { useRef, useEffect, useState } from 'react';
-import './DisplayAsGrid.css';
+import React, { useRef, useEffect, useState } from "react";
+import "./DisplayAsGrid.css";
+import { NavLink } from "react-router-dom";
 
 function HtmlAdd() {
-  const [flexDirectionState, setFlexDirectionState] = useState('row');
-  const [flexState, setFlexState] = useState('flex');
-  const [wrap, setWrap] = useState('wrap');
-  const [justifyContent, setJustifycontent] = useState('center');
-  const [allignItems, setAllignItems] = useState('center');
+  const [flexDirectionState, setFlexDirectionState] = useState("row");
+  const [flexState, setFlexState] = useState("flex");
+  const [wrap, setWrap] = useState("wrap");
+  const [justifyContent, setJustifycontent] = useState("center");
+  const [allignItems, setAllignItems] = useState("center");
   const allign = useRef();
   /*eslint-disable*/
-  const item = { color: 'white' };
+  const item = { color: "white" };
   useEffect(() => {
-    document.getElementById('container1').style = `
+    document.getElementById("container1").style = `
       flex-direction:${flexDirectionState};
       flex-wrap:${wrap};
       display:${flexState};
@@ -21,112 +22,209 @@ function HtmlAdd() {
       gap:20px;
       `;
   }, [flexDirectionState, flexState, wrap, justifyContent, allignItems]);
- 
+
   return (
     <div>
       <div className="body inputs">
         <label className="mainLabel">Display</label>
         <label className="Labell">
-          {' '}
-          <input type="radio" name="flex" className="flexradio" checked={flexState === 'flex'} onChange={() => { setFlexState('flex'); }} />
+          {" "}
+          <input
+            type="radio"
+            name="flex"
+            className="flexradio"
+            checked={flexState === "flex"}
+            onChange={() => {
+              setFlexState("flex");
+            }}
+          />
           Flex
         </label>
         <label className="Labell">
-          <input type="radio" name="flex" checked={flexState === 'inline-flex'} onChange={() => { setFlexState('inline-flex'); }} />
-
+          <input
+            type="radio"
+            name="flex"
+            checked={flexState === "inline-flex"}
+            onChange={() => {
+              setFlexState("inline-flex");
+            }}
+          />
           Flex-inline
         </label>
-
       </div>
       <div className="body inputs">
         <label className="mainLabel">Display</label>
 
         <label className="Labell">
-          {' '}
-          <input type="radio" id="row" name="fav_language" value="HTML" checked={flexDirectionState === 'row'} onClick={() => { setFlexDirectionState('row'); }} />
+          {" "}
+          <input
+            type="radio"
+            id="row"
+            name="fav_language"
+            value="HTML"
+            checked={flexDirectionState === "row"}
+            onClick={() => {
+              setFlexDirectionState("row");
+            }}
+          />
           Flexdirection_row
         </label>
 
         <label className="Labell">
-          <input type="radio" id="column" name="fav_language" value="CSS" onClick={() => { setFlexDirectionState('column'); }} />
+          <input
+            type="radio"
+            id="column"
+            name="fav_language"
+            value="CSS"
+            onClick={() => {
+              setFlexDirectionState("column");
+            }}
+          />
           Flexdirection_Column
-
         </label>
-
       </div>
       <div className="body inputs">
         <label className="mainLabel">wrap</label>
 
         <label className="Labell">
-          <input type="radio" id="row" name="wrap" value="HTML" checked={wrap === 'wrap'} onClick={() => { setWrap('wrap'); }} />
+          <input
+            type="radio"
+            id="row"
+            name="wrap"
+            value="HTML"
+            checked={wrap === "wrap"}
+            onClick={() => {
+              setWrap("wrap");
+            }}
+          />
           wrap
-
         </label>
 
         <label className="Labell">
-          <input type="radio" id="column" name="wrap" checked={wrap === 'nowrap'} value="CSS" onClick={() => { setWrap('nowrap'); }} />
+          <input
+            type="radio"
+            id="column"
+            name="wrap"
+            checked={wrap === "nowrap"}
+            value="CSS"
+            onClick={() => {
+              setWrap("nowrap");
+            }}
+          />
           nowrap
-
         </label>
-
       </div>
       <div className="body inputs">
         <label className="mainLabel">JustifyContent</label>
         <label className="Labell">
-          <input type="radio" name="justify" checked={justifyContent === 'center'} onChange={() => { setJustifycontent('center'); }} />
+          <input
+            type="radio"
+            name="justify"
+            checked={justifyContent === "center"}
+            onChange={() => {
+              setJustifycontent("center");
+            }}
+          />
           center
-
         </label>
 
         <label className="Labell">
-          <input type="radio" name="justify" checked={justifyContent === 'space-around'} onChange={() => { setJustifycontent('space-around'); }} />
+          <input
+            type="radio"
+            name="justify"
+            checked={justifyContent === "space-around"}
+            onChange={() => {
+              setJustifycontent("space-around");
+            }}
+          />
           space-around
-
         </label>
 
         <label className="Labell">
-          <input type="radio" name="justify" checked={justifyContent === 'start'} onChange={() => { setJustifycontent('start'); }} />
+          <input
+            type="radio"
+            name="justify"
+            checked={justifyContent === "start"}
+            onChange={() => {
+              setJustifycontent("start");
+            }}
+          />
           Start
-
         </label>
 
         <label className="Labell">
-          <input type="radio" name="justify" checked={justifyContent === 'space-evenly'} onChange={() => { setJustifycontent('space-evenly'); }} />
+          <input
+            type="radio"
+            name="justify"
+            checked={justifyContent === "space-evenly"}
+            onChange={() => {
+              setJustifycontent("space-evenly");
+            }}
+          />
           space-evenly
-
         </label>
-
       </div>
       <div className="body inputs">
-
         <label className="mainLabel">AllignItems</label>
         <label className="Labell">
-          <input type="radio" name="allignItems" checked={allignItems === 'baseline'} onClick={() => { setAllignItems('baseline'); }} />
+          <input
+            type="radio"
+            name="allignItems"
+            checked={allignItems === "baseline"}
+            onClick={() => {
+              setAllignItems("baseline");
+            }}
+          />
           baseline
-
         </label>
         <label className="Labell">
-          <input type="radio" name="allignItems" checked={allignItems === 'center'} onClick={() => { setAllignItems('center'); }} />
+          <input
+            type="radio"
+            name="allignItems"
+            checked={allignItems === "center"}
+            onClick={() => {
+              setAllignItems("center");
+            }}
+          />
           center
-
         </label>
         <label className="Labell">
-          <input type="radio" name="allignItems" checked={allignItems === 'flex-start'} onClick={() => setAllignItems('flex-start')} />
+          <input
+            type="radio"
+            name="allignItems"
+            checked={allignItems === "flex-start"}
+            onClick={() => setAllignItems("flex-start")}
+          />
           flex-start
-
         </label>
         <label className="Labell">
-          <input type="radio" name="allignItems" checked={allignItems === 'flex-end'} onClick={() => { setAllignItems('flex-end'); }} />
+          <input
+            type="radio"
+            name="allignItems"
+            checked={allignItems === "flex-end"}
+            onClick={() => {
+              setAllignItems("flex-end");
+            }}
+          />
           flex-end
-
         </label>
 
         <label className="Labell">
-          <input type="radio" name="allignItems" checked={allignItems === 'stretch'} onClick={() => { setAllignItems('stretch'); }} />
+          <input
+            type="radio"
+            name="allignItems"
+            checked={allignItems === "stretch"}
+            onClick={() => {
+              setAllignItems("stretch");
+            }}
+          />
           stretch
-
         </label>
-
+        <div className="body inputs">      
+          <NavLink to="/" className="navlink">
+            <button className="mainLabelHomePage">Home Page</button>
+          </NavLink>
+        </div>
       </div>
       <div className="body">
         <div className="contain">

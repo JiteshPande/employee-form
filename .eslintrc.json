@@ -22,9 +22,8 @@
         "jsx-a11y/media-has-caption": [ 2, {
             "audio": [ "Audio" ],
             "video": [ "Video" ],
-            "track": [ "Track" ],
+            "track": [ "Track" ]
           }]
-        // "import/extensions": "off"
     }
     
         
