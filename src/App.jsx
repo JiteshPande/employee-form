@@ -4,7 +4,6 @@ import HtmlAddBackup from './form/HtmlAddBackup';
 import RegistrationForm from './form/Registration';
 
 function App() {
-
   return (
     <div>
       <Routes>
