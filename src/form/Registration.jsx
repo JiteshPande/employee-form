@@ -139,13 +139,13 @@ function RegistrationForm() {
       return emailAvailable;
     });
     if (
-      user === "" ||
-      email === "" ||
-      date === "" ||
-      profile === "" ||
-      qualification === "" ||
-      gender === "" ||
-      audiomsg === ""
+      user === ""
+      || email === ""
+      || date === ""
+      || profile === ""
+      || qualification === ""
+      || gender === ""
+      || audiomsg === ""
     ) {
       setErrorMsg("all fields are mandatory");
       setError("flex");
@@ -252,7 +252,7 @@ function RegistrationForm() {
     };
     if (inputImage?.current?.children[0]?.children[0]?.files[0]) {
       reader.readAsDataURL(
-        inputImage?.current?.children[0]?.children[0]?.files[0]
+        inputImage?.current?.children[0]?.children[0]?.files[0],
       );
     }
   };
@@ -287,14 +287,14 @@ function RegistrationForm() {
               "load",
               (ev) => {
                 document.getElementById(
-                  "my-audio"
+                  "my-audio",
                 ).src = `data:audio/webm;${reader.result.substring(30)}`;
                 console.log(ev);
                 updateAudiomsg(
-                  `data:audio/webm;${reader.result.substring(30)}`
+                  `data:audio/webm;${reader.result.substring(30)}`,
                 );
               },
-              false
+              false,
             );
             reader.readAsDataURL(new Blob(recordedChunks));
           });
@@ -395,7 +395,9 @@ function RegistrationForm() {
             component="div"
             style={centerHeader}
           >
-            <AssignmentIcon /> Employee Registration Form
+            <AssignmentIcon />
+            {" "}
+            Employee Registration Form
           </Typography>
         </Toolbar>
       </AppBar>
@@ -426,10 +428,12 @@ function RegistrationForm() {
                     Qualification
                   </StyledTableCell>
                   <StyledTableCell align="right" style={boldStyle}>
-                    Profile{" "}
+                    Profile
+                    {" "}
                   </StyledTableCell>
                   <StyledTableCell align="right" style={boldStyle}>
-                    Audio{" "}
+                    Audio
+                    {" "}
                   </StyledTableCell>
                   <StyledTableCell align="right" style={boldStyle}>
                     {" "}
@@ -472,7 +476,10 @@ function RegistrationForm() {
                         />
                       </StyledTableCell>
                       <StyledTableCell style={centerData}>
-                        <audio style={audioTable} src={row.audiomsg} controls />
+                        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                        <audio style={audioTable} src={row.audiomsg} controls>
+                          <track kind="captions" />
+                        </audio>
                       </StyledTableCell>
                       <StyledTableCell align="right" style={centerData}>
                         <Button
@@ -701,7 +708,9 @@ function RegistrationForm() {
                           id="my-audio"
                           controls
                           style={{ display: "block" }}
-                        />
+                        >
+                          <track kind="captions" />
+                        </audio>
                         <Button
                           id="start"
                           onClick={startHandler}

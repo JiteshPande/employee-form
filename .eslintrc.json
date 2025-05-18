@@ -19,6 +19,7 @@
     "rules": {
         "linebreak-style":0,
         "react/jsx-filename-extension": [0],
+        "quotes": ["error", "double"],
         "jsx-a11y/media-has-caption": [ 2, {
             "audio": [ "Audio" ],
             "video": [ "Video" ],

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import HtmlAddBackup from './form/HtmlAddBackup';
-import RegistrationForm from './form/Registration';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import HtmlAddBackup from "./form/HtmlAddBackup";
+import RegistrationForm from "./form/Registration";
 
 function App() {
   return (
