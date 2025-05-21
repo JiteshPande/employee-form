@@ -198,7 +198,7 @@ function RegistrationForm() {
           setOpen(false);
         }, 1000);
       } else {
-        await axios.post(process.env?.REACT_APP_BASE_URL, payload).then(() => {
+        await axios.post(`${process.env.REACT_APP_BASE_URL}/employee`, payload).then(() => {
           setCount(!recount);
         });
         setDataSubmit("Data Submitted");
