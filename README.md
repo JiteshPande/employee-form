@@ -169,7 +169,11 @@ https://user-images.githubusercontent.com/113659313/199432971-e3c07125-9c30-40b4
 
  ![Screenshot (533)](https://github.com/user-attachments/assets/2fbce7f3-2bb4-4446-a383-fd54d97e2903)
 
+ Updated Employee Registration Page
  
+
+ 
+![Screenshot (534)](https://github.com/user-attachments/assets/03bcdd34-5bbd-46fe-bdc7-59faa051bd89)
 
 
 
